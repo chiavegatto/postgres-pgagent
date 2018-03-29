@@ -7,3 +7,5 @@ RUN apt-get update && apt-get -y install pgagent && \
     dpkg-reconfigure --frontend noninteractive tzdata
 
 ADD wait-for-it.sh /tmp/
+
+COPY init-pg-agent.sh /docker-entrypoint-initdb.d/init-pg-agent.sh
